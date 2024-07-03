@@ -5,7 +5,6 @@ using NTier.BLL.Services;
 using NTier.BLL.Models;
 using System.Collections.Generic;
 using System.Net;
-using System.Data.Entity;
 
 namespace MVCProjectCodeFirstNTier.Controllers
 {

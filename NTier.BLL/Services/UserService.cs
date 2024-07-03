@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+using System.Data.Entity;
 using NTier.DAL.Contexts;
 using NTier.DAL.Models;
 using NTier.BLL.Models;
-using System.Data.Entity;
 
 namespace NTier.BLL.Services
 {
