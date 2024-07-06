@@ -15,10 +15,10 @@ namespace MVCProjectCodeFirstNTier.Controllers
         public ActionResult Index()
         {
             List<UIUsers> userList = new List<UIUsers>();
-            UIUsers currUser = new UIUsers();
             var bllUsers = _userService.GetAllUsers().ToList();
             foreach(var user in bllUsers)
             {
+                UIUsers currUser = new UIUsers();
                 currUser.userID = user.userID;
                 currUser.username = user.username;
                 currUser.email = user.email;

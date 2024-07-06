@@ -14,10 +14,11 @@ namespace NTier.BLL.Services
         public List<BLLUsers> GetAllUsers()
         {
             List<BLLUsers> bllUsers = new List<BLLUsers>();
-            BLLUsers currUser = new BLLUsers();
+            
             var dalUsers = _context.Users.ToList();
             foreach (var user in dalUsers)
             {
+                BLLUsers currUser = new BLLUsers();
                 currUser.userID = user.userID;
                 currUser.username = user.username;
                 currUser.email = user.email;
