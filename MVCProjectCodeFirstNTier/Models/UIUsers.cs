@@ -5,7 +5,6 @@ namespace MVCProjectCodeFirstNTier.Models
 {
     public class UIUsers
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int userID { get; set; }
 
         [Display(Name = "UserName: ")]

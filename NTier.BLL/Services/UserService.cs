@@ -58,13 +58,14 @@ namespace NTier.BLL.Services
 
         public void EditUser(BLLUsers bllUser)
         {
-            var user = new Users
+            var dalUser = _context.Users.Find(bllUser.userID);
+            if (dalUser != null)
             {
-                username = bllUser.username,
-                email = bllUser.email
-            };
-            _context.Entry(user).State = EntityState.Modified;
-            _context.SaveChanges();
+                dalUser.username = bllUser.username;
+                dalUser.email = bllUser.email;
+                _context.Entry(dalUser).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
         }
 
         public void DeleteUser(int id)

@@ -5,6 +5,7 @@ using NTier.BLL.Services;
 using NTier.BLL.Models;
 using System.Collections.Generic;
 using System.Net;
+using System.Data;
 
 namespace MVCProjectCodeFirstNTier.Controllers
 {
@@ -93,19 +94,17 @@ namespace MVCProjectCodeFirstNTier.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "userID,username,email,password,confirmedPassword,picturePath")] UIUsers uiUser)
+        public ActionResult Edit([Bind(Include = "userID,username,email")] UIUsers uiUser)
         {
-            if (ModelState.IsValid)
+            var bllUser = new BLLUsers
             {
-                var user = new BLLUsers
-                {
-                    username = uiUser.username,
-                    email = uiUser.email,
-                };
-                _userService.EditUser(user);
-                return RedirectToAction("Index");
-            }
-            return View(uiUser);
+                userID = uiUser.userID,
+                username = uiUser.username,
+                email = uiUser.email
+            };
+
+            _userService.EditUser(bllUser);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int? id)

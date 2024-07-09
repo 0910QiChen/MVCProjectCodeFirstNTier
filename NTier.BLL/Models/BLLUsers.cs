@@ -5,7 +5,6 @@ namespace NTier.BLL.Models
 {
     public class BLLUsers
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int userID { get; set; }
 
         [Display(Name = "UserName: ")]
